@@ -153,3 +153,9 @@ $.ajax({
         var icon =fiveDaysWeather.list[i].weather[0].icon;
         var iconURL = "https://openweathermap.org/img/wn/" + icon + ".png"
         
+        var newI = $("<img>").attr("src", iconURL);  
+        //get the temperature
+        var tempFromKelvin = (fiveDaysWeather.list[i].main.temp - 273.15) * 1.80 + 32
+        var newP1 = $("<p>",{class: "card-text", text: "Temp: " + tempFromKelvin.toFixed(1) + " °F"}); 
+        
+        
