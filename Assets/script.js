@@ -56,4 +56,20 @@ $(document).ready(function() {
   var newDiv = $("<div>").addClass("card-body");
   //city name
   var newH4 = $("<h4>",{class: "card-title", text: citySearch + " (Current) "});  //works with a variable for text
+  //get the icon and appened to the h4
+  var icon =todaysWeather.weather[0].icon;
+  var iconURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+  var newI = $("<img>").attr("src", iconURL);            
+  newH4.append(newI);
   
+ //temp, converted from kelvin
+ var tempFromKelvin = (todaysWeather.main.temp - 273.15) * 1.80 + 32
+ var newP1 = $("<p>",{class: "card-text", text: "Temperature: " + tempFromKelvin.toFixed(1) + " °F"}); //  alt 0 1 7 6
+ //humidity
+ var newP2 = $("<p>",{class: "card-text", text: "Humidity: " + todaysWeather.main.humidity +"%"});
+ //wind speed
+ var newP3 = $("<p>",{class: "card-text", text: "Wind Speed: " + todaysWeather.wind.speed + " MPH"});                
+ //uv index
+ var newP4 = $("<p>",{class: "card-text", text: "UV Index: "});
+ 
+ 
