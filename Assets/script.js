@@ -197,4 +197,9 @@ $.ajax({
                 localStorage.setItem("lastCitySearched", cityName);
                 };
                 
-                
+                //retrieve the last city searched
+                function retrieveLastCitySearched(){
+                    return localStorage.getItem("lastCitySearched");
+                    };    
+                    
+                    
