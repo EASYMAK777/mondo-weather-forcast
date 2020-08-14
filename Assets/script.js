@@ -42,4 +42,12 @@ $(document).ready(function() {
     //This function builds todays weather - the big section on the right
     //The function is expecting two things - the response object and the uv data
     //retrieved from the five day forecast API call.
+    function buildTodaysWeather () {
+        var currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + citySearch +"&appid=" + APIKey;
     
+        $.ajax({
+            url: currentWeatherURL,
+            method: "GET"
+          }).then(function(todaysWeather) {
+    
+            
