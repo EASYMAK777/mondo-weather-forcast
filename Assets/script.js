@@ -121,24 +121,15 @@ function buildFiveDayForecast () {
 
 var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + citySearch + "&appid=" + APIKey;
 
-
 //build cards to get the 5-day forecast
 $.ajax({
-url: fiveDayURL,
-method: "GET"
-}).then(function(fiveDaysWeather) {
-console.log(fiveDaysWeather);
-$("#fivedaywords").empty();
-$("#fivedaysection").empty();        
-
-$("#fivedaywords").text("5-Day Forecast");
-
-//Gets the information from the API
-var element3PMFirstAppears = 0;
-for (i = 0; i < 8; i++) {
-    if (fiveDaysWeather.list[i].dt_txt.includes("15:00:00")) {
-        element3PMFirstAppears = i;
-        break;
-    }
-}
-
+    url: fiveDayURL,
+    method: "GET"
+    }).then(function(fiveDaysWeather) {
+    console.log(fiveDaysWeather);
+    $("#fivedaywords").empty();
+    $("#fivedaysection").empty();        
+    
+    $("#fivedaywords").text("5-Day Forecast");
+    
+    
