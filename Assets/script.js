@@ -17,10 +17,7 @@ $(document).ready(function() {
     
 
     
-    $(document).on("click","td", function(e){
-        inputCity = e.target.innerHTML;
-        saveLastCitySearched(inputCity);
-        retrieveWeather(false);
+   
     });
     //*****END CLICKING EVENTS *****/
 
