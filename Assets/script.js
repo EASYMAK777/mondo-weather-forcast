@@ -18,3 +18,20 @@ function createCityList() {
     })
 }
 
+//loads cityList from local storage and calls api to get the data for the last searched city if it exists
+
+function init() {
+    var storedCities = JSON.parse(localStorage.getItem("cities"));
+
+    if (storedCities !==null) {
+        cityList = storedCities;
+    }
+    createCityList();
+
+    if (cityList) {
+        var thisCity = cityList[cityList.length - 1]
+        getCurrentWeather(thisCity, id);
+        getForecast(thisCity, id);
+    }
+}
+
