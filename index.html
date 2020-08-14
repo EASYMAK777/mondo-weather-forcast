@@ -1,65 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>  
+  
+  <!-- site specific stylesheet -->
+  <link rel="stylesheet" href="css/style.css"/>
 
-    <title>EASYMAK's Mondo Five Day Forcast</title>
-  </head>
-  <body>
-    
-    
-    <h1>Welcome to the Mondo Five Day Forecast</h1>
+  <title>Weather Dashboard</title>
 
-    <div class="bg-dark">
-        <header class="text-center mb-2 p-2 text-light">Welcome to the Five Day Forecast!!</header>
-    </div>
-    <container class="container-fluid">
+</head>
+
+<body>
+  <header>
+    <h1>Weather Dashboard</h1>
+  </header>
+
+  <!-- bootstrap container -->
+  <main class="container-fluid">
+    <!-- rows, columns in bootstrap.-->
+    <div class="row">
+      <section class="col-lg-3 searchdiv"> <!-- search input and saved searches - left hand side-->
+        <h4>Search for a City:</h4>
+        <div class="input-group col-md-12">
+          <input class="form-control py-2 border-right-0 border"  id="search-input" type="search" value="City">
+          <span class="input-group-append">
+            <button class="btn btn-primary border-left-0 border" id="search-btn" type="button">
+                  <i class="fas fa-search"></i>
+            </button>
+          </span>
+        </div>        
+        
+        <table class="searchedCitiesTable">
+          <tr>
+          </tr>
+        </table>
+      </section>
+
+      <section class="col-lg-9"> <!-- weather panel - right hand side -->
+        <!-- Today's weather -->
         <div class="row">
-            <div class="col-md-3">
-                <form>
-                    <div class="input-group m-2 pr-3">
-                        <input type="text" class="form-control" id="citySearchInput" placeholder="Search for a City">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit" id="citySearchButton"><i class="fas fa-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-                <div class="w-100">
-                    <ul class="list-group cityList mx-2 mt-3"></ul>
-                </div>
+          <section class="col-lg-12"> <!-- todays weather-->
+            <div class="card" id="todays-weather">
+               <div class="card-body">
+                <h4 class="card-title">Atlanta (4/20/2020) &nbsp;<i class="fas fa-sun weathericon"></i></h4>
+                <p class="card-text">Temperature: 91.05 °F</p>
+                <p class="card-text">Humidity: 43%</p>
+                <p class="card-text">Wind Speed: 4.7 MPH</p>
+                <p class="card-text">UV Index: <span class="moderateuv">4.89</span></p>                
+              </div> 
             </div>
-            <div class="col-md-9">
-                <div class="card shadow m-2">
-                    <div class="card-body cityToday"></div>
-                    
-                </div>
-                <div class="m-2">
-                    <h3>5-Day Forecast:</h3>
-                    <div class="forecast row text-light">
-                        
-                    </div>
-                </div>
-            </div>
+          </section>            
         </div>
-    </container>
+        <!-- 5 day forecast words -->
+        <div class="row">
+          <section class="col-lg-12">
+            <h4  id="fivedaywords">              
+            </h4>
+          </section>
+        </div>
+        <!-- 5 day forecast cards -->
+        <div class="row" id="fivedaysection">
+           <section class="col-lg-2" id="section0">
+            <div class="card bg-primary text-white" id="card0">
+                <div class="card-body">
+                  <h5 class="card-title">04/20/2020</h5>
+                  <i class="fas fa-sun weathericon"></i>
+                  <p class="card-text">Temp: 91.05 °F</p>
+                  <p class="card-text">Humidity: 43%</p>                  
+                </div>
+            </div>
+          </section> 
+        </div>        
 
+      </section>      
+    </div>         
+ 
+  </div>
+  
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- site specific js -->
+  <script src="script/script.js"></script>
+</body>
 
-
-
-
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
 </html>
