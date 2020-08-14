@@ -7,4 +7,10 @@ $(document).ready(function() {
 
     initDoc();
 
-    
+    //***** CLICKING EVENTS *****/
+    //if the search button is clicked, then search.
+    $("#search-btn").on("click", function() {
+        if (saveCityList()) {
+            retrieveWeather(true);
+        };
+
