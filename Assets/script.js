@@ -169,4 +169,16 @@ $.ajax({
     
     }
     
+    //********* CODE FOR SAVING CITY LIST, LAST CITY SEARCHED, ETC *******/
     
+    
+    
+    function initDoc() {
+        retrievePreviouslySearchedList();
+        citySearch = retrieveLastCitySearched();
+        if (citySearch != null) {
+        retrieveWeather(false);
+        }
+        };
+        
+        
