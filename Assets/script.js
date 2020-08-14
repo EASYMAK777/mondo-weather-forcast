@@ -206,4 +206,9 @@ $.ajax({
                  function saveCityList() {        
                     if (getcitySearch()) {
                         var cities = JSON.parse(window.localStorage.getItem('citiesPreviouslySearched'));
-                        
+                        if (cities === null) {
+                            cities = [];
+                        }
+                       
+                           
+                    
