@@ -141,4 +141,13 @@ $.ajax({
         }
     }
     
-    
+    //Get the 3pm element every day for the next 5 day
+    //api helps get weather for 3pm that day,
+    for (i = element3PMFirstAppears; i < 40; i+=8) {
+        var sectionNbr = "#section" + i;
+        var newSection = $("<section>",{class: "col-lg-2", id: sectionNbr});           
+        var newCard = $("<div>").addClass("card bg-primary text-white");            
+        var newDiv = $("<div>").addClass("card-body");
+        var newH5 = $("<h5>",{class: "card-title", text: moment(fiveDaysWeather.list[i].dt_txt).format('MM/DD/YYYY')});
+        
+       
