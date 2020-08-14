@@ -30,5 +30,16 @@ $(document).ready(function() {
     });
     //*****END CLICKING EVENTS *****/
     
+    function retrieveWeather(needCity){
+        if (needCity) {
+            getcitySearch()
+        }
+        //AJAX and building cards.  Since asyncrhonous, I dont care which one loads first and second.
+        buildTodaysWeather();
+        buildFiveDayForecast();
+    };
     
+    //This function builds todays weather - the big section on the right
+    //The function is expecting two things - the response object and the uv data
+    //retrieved from the five day forecast API call.
     
