@@ -158,4 +158,15 @@ $.ajax({
         var tempFromKelvin = (fiveDaysWeather.list[i].main.temp - 273.15) * 1.80 + 32
         var newP1 = $("<p>",{class: "card-text", text: "Temp: " + tempFromKelvin.toFixed(1) + " °F"}); 
         
-        
+        newDiv.append(newH5, newI, newP1);
+        $(newCard).append(newDiv);
+        $(newSection).append(newCard);
+        $("#fivedaysection").append(newSection);
+    }            
+    
+    });
+    
+    
+    }
+    
+    
