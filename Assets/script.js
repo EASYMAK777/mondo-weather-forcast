@@ -132,4 +132,13 @@ $.ajax({
     
     $("#fivedaywords").text("5-Day Forecast");
     
+    //Gets the information from the API
+    var element3PMFirstAppears = 0;
+    for (i = 0; i < 8; i++) {
+        if (fiveDaysWeather.list[i].dt_txt.includes("15:00:00")) {
+            element3PMFirstAppears = i;
+            break;
+        }
+    }
+    
     
