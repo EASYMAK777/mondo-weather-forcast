@@ -14,3 +14,21 @@ $(document).ready(function() {
             retrieveWeather(true);
         };
 
+    });
+
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13) {
+            $("#search-btn").click();
+        }
+    });
+    
+    
+    $(document).on("click","td", function(e){
+        citySearch = e.target.innerHTML;
+        saveLastCitySearched(citySearch);
+        retrieveWeather(false);
+    });
+    //*****END CLICKING EVENTS *****/
+    
+    
+    
