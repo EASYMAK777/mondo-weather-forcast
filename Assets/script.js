@@ -181,4 +181,16 @@ $.ajax({
         }
         };
         
-        
+        // Retreive city that user put in to search
+        function getcitySearch(){
+            citySearch =  $("#search-input").val().trim();
+            if (citySearch == "") {
+            alert("Please enter a city to search for.")
+            return false;
+            }
+            return true;
+            
+            }
+            
+            
+            
