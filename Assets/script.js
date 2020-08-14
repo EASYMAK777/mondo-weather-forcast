@@ -9,3 +9,12 @@ function storeCities() {
 
 }
 
+//add last searched city to the list-group as button for user to select city
+
+function createCityList() {
+    $(".cityList").empty();
+    cityList.forEach(function(city) {
+        $(".cityList").prepend($(`<button class="list-group-item list-group-item-action cityButton" data-city="${city}">${city}</button>`));
+    })
+}
+
