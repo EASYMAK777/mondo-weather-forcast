@@ -35,3 +35,17 @@ function init() {
     }
 }
 
+// gets current forecast for selected city and calls uv index function
+function getCurrentWeather(thisCity, id) {
+    var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=${thisCity}&units=imperial&appid=${id}";
+    var cityLat;
+    var cityLong;
+
+    $.ajax({
+        url: weatherURL,
+        method: "GET"
+    }).then(function(data){
+        
+
+}
+
