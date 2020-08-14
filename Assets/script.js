@@ -160,4 +160,5 @@ $.ajax({
         
         newDiv.append(newH5, newI, newP1);
         $(newCard).append(newDiv);
+        $(newSection).append(newCard);
         
