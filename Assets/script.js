@@ -73,3 +73,11 @@ $(document).ready(function() {
  var newP4 = $("<p>",{class: "card-text", text: "UV Index: "});
  
  
+ //api for that using the location coordinates.  Get those from the current weather api and pass them to the uv api.  
+ //build the elements
+ var latValue = todaysWeather.coord.lat;
+ var lonValue = todaysWeather.coord.lon;
+
+ var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + latValue + "&lon=" + lonValue;
+
+ 
