@@ -50,4 +50,10 @@ $(document).ready(function() {
             method: "GET"
           }).then(function(todaysWeather) {
     
-            
+  //clear the 'todays-weather' div for new data
+  $("#todays-weather").empty();
+  //create a new card body
+  var newDiv = $("<div>").addClass("card-body");
+  //city name
+  var newH4 = $("<h4>",{class: "card-title", text: citySearch + " (Current) "});  //works with a variable for text
+  
