@@ -204,5 +204,6 @@ $.ajax({
                     
                  //save the list of cities.  as a user inputs cities, save them as an array locally
                  function saveCityList() {        
-                    
-                   
+                    if (getcitySearch()) {
+                        var cities = JSON.parse(window.localStorage.getItem('citiesPreviouslySearched'));
+                        
