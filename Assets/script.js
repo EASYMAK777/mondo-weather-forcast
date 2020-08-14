@@ -45,7 +45,26 @@ function getCurrentWeather(thisCity, id) {
         url: weatherURL,
         method: "GET"
     }).then(function(data){
-        
+        $(".cityToday").append(
+            `<div class="row ml-1">
+                <h3 class="mr-3">${data.name} (${(new Date(1000 * data.dt).getUTCMonth()) + 1}/${(new Date(1000 * data.dt).getUTCDate()) - 1}/${new Date(1000 * data.dt).getUTCFullYear()})</h3>
+                <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png">
+            </div>`
+            
+        )
+        //append new divs with weather information
+        $(".cityToday").append('<p>Temperature: ${data.main.temp} &degf</p>')
+        $(".cityToday").append(`<p>Humidity: ${data.main.humidity} %</p>`)
+        $(".cityToday").append(`<p>Wind: ${data.wind.speed} mph</p>`)
+        cityLat = data.coord.lat;
+        cityLong = data.coord.lon;
+        getUVI(id, cityLat, cityLong);
+    })
+    
 
 }
 
+//get 5 day forecast for the selected City
+function getForecast(thisCity, id) {
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=${thisCity}&units=imperial&appid=${id}";
+}
