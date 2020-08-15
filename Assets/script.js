@@ -17,7 +17,10 @@ $(document).ready(function() {
     
 
     
-   
+    $(document).on("click","td", function(e){
+        inputCity = e.target.innerHTML;
+        saveLastCitySearched(inputCity);
+        retrieveWeather(false);
     });
     //*****END CLICKING EVENTS *****/
 
@@ -55,7 +58,7 @@ $(document).ready(function() {
             
             //temp, converted from kelvin
             var tempFromKelvin = (todaysWeather.main.temp - 273.15) * 1.80 + 32
-            var newP1 = $("<p>",{class: "card-text", text: "Temperature: " + tempFromKelvin.toFixed(1) + " °F"}); 
+            var newP1 = $("<p>",{class: "card-text", text: "Temperature: " + tempFromKelvin.toFixed(1) + " °F"}); //  alt 0 1 7 6
             //humidity
             var newP2 = $("<p>",{class: "card-text", text: "Humidity: " + todaysWeather.main.humidity +"%"});
             //wind speed
