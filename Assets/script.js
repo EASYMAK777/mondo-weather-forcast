@@ -64,7 +64,7 @@ $(document).ready(function() {
             //wind speed
             var newP3 = $("<p>",{class: "card-text", text: "Wind Speed: " + todaysWeather.wind.speed + " MPH"});                
             //uv index
-            var newP4 = $("<p>",{class: "card-text", text: "UV Index: "});
+            var newP2 = $("<p>",{class: "card-text", text: "UV Index: "});
             
             // got uv index from another api
             var latValue = todaysWeather.coord.lat;
@@ -98,8 +98,8 @@ $(document).ready(function() {
                 };
 
                 var newSpan = $("<span>",{class: ultraVioletColor, text: ultraVioletIndex});                        
-                newP4.append(newSpan);
-                newDiv.append(newH4, newP1, newP2, newP3, newP4);
+                newP2.append(newSpan);
+                newDiv.append(newH4, newP1, newP2, newP3, newP2);
                 $("#todays-weather").append(newDiv);
             });
         });
@@ -148,7 +148,7 @@ $(document).ready(function() {
                 //get temp 
                 var tempFromKelvin = (fiveDaysWeather.list[i].main.temp - 273.15) * 1.80 + 32
                 var newP1 = $("<p>",{class: "card-text", text: "Temp: " + tempFromKelvin.toFixed(1) + " °F"}); //  alt 0 1 7 6
-                
+                var newP2 = $("<p>",{class: "card-text", text: "Humidity: " + fiveDaysWeather.list[i].main.humidity +"%"});
                 newDiv.append(newH5, newI, newP1,);
                 $(newCard).append(newDiv);
                 $(newSection).append(newCard);
