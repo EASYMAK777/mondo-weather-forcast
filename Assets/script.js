@@ -145,11 +145,11 @@ $(document).ready(function() {
                 var icon =fiveDaysWeather.list[i].weather[0].icon;
                 var iconURL = "https://openweathermap.org/img/wn/" + icon + ".png"
                 var newI = $("<img>").attr("src", iconURL);  
-                //get temp 
+                //get temp and humidity reading
                 var tempFromKelvin = (fiveDaysWeather.list[i].main.temp - 273.15) * 1.80 + 32
                 var newP1 = $("<p>",{class: "card-text", text: "Temp: " + tempFromKelvin.toFixed(1) + " °F"}); //  alt 0 1 7 6
                 var newP2 = $("<p>",{class: "card-text", text: "Humidity: " + fiveDaysWeather.list[i].main.humidity +"%"});
-                newDiv.append(newH5, newI, newP1,);
+                newDiv.append(newH5, newI, newP1, newP2);
                 $(newCard).append(newDiv);
                 $(newSection).append(newCard);
                 $("#fivedaysection").append(newSection);
