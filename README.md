@@ -21,3 +21,4 @@ WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 
 
+<img src="weather-app.png" alt="Weather App">
