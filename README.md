@@ -1,4 +1,4 @@
-# mondo-weather-forcast
+# mondo-weather-forecast
 
 
 AS A traveler
